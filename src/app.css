@@ -1,0 +1,46 @@
+@import '@fontsource-variable/manrope';
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root {
+	--txt: oklch(100% 0 0);
+	--bg: oklch(24% 0.02 270);
+	--highlight: oklch(30% 0.02 270);
+}
+
+body {
+	height: 100svh;
+	display: grid;
+	place-content: center;
+	font-family: 'Manrope Variable';
+	color: var(--txt);
+	background-color: var(--bg);
+	line-height: 1.4;
+}
+
+pre {
+	tab-size: 2;
+}
+
+code {
+	display: grid;
+	font-family: 'Monaspace Neon';
+
+	.line {
+		counter-increment: count;
+	}
+
+	.line:not(:last-of-type)::before {
+		content: counter(count);
+		padding-inline: 0.5em;
+		opacity: 0.4;
+	}
+
+	.highlighted {
+		background-color: var(--highlight);
+	}
+}
